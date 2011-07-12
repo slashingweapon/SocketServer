@@ -1,0 +1,4 @@
+This is a trivial threaded socket server.  It listens on port 3137, and anyone who connects
+to it gets the message "hello, client!", followed by a disconnect.
+
+You can shut the server down with ctrl-c.
