@@ -2,3 +2,20 @@ This is a trivial threaded socket server.  It listens on port 3137, and anyone w
 to it gets the message "hello, client!", followed by a disconnect.
 
 You can shut the server down with ctrl-c.
+
+
+Architecturally, the things that really need to change are:
+
+* A set of real thread libraries.  These days, you shouldn't have to shlep around your 
+  own thread pools and dispatch code.
+
+* Either a read timeout on the listening socket, or use select().
+
+* More careful signal handling.
+
+* Connection limits.
+
+* A worker class that actually does something.
+
+* The worker should probably be descended from super-class or an interface.
+
